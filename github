@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+// Функция для вычисления n-го числа Фибоначчи (последовательность начинается с 1, 1)
+int fib_recursive(int n) {
+    if (n <= 1)
+        return n;
+    return fib_recursive(n - 1) + fib_recursive(n - 2);
+}
+
+// Функция для вычисления n-го числа Фибоначчи (последовательность начинается с 0, 1)
+int fib_iterative(int n) {
+    int a = 0, b = 1, next;
+    for (int i = 0; i < n; i++) {
+        cout << a << endl;
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    return a;
+}
+
+int main() {
+    // Первый коммит: вывод "Hello, World!"
+    cout << "Hello, World!" << endl;
+
+    // Вызов функции для вычисления 10-го числа Фибоначчи (последовательность начинается с 1, 1)
+    int fib_10 = fib_recursive(10);
+    cout << "10-ое число Фибоначчи (начиная с 1, 1): " << fib_10 << endl;
+
+    // Исправление последовательности на (0, 1) и вывод 10 чисел Фибоначчи
+    cout << "Первые 10 чисел Фибоначчи (начиная с 0, 1):" << endl;
+    int fib_10_corrected = fib_iterative(10);
+
+    return 0;
+}
